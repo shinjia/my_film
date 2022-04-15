@@ -67,7 +67,7 @@ if(($handle = fopen($csv_file, "r")) !== FALSE)
 
     $record_all = rtrim($record_all, ',');  // 移除最後一個逗號
     $sqlstr .= $record_all;
-
+ 
     if($pdo->query($sqlstr))
     {
         $msg = '已新增 ' . $cnt . ' 筆記錄';

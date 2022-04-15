@@ -53,7 +53,7 @@ if($sth->execute())
 
          $str_direct .= '<li>';
          // $str_direct .= $name;
-         $str_direct .= '<a href="list_by_cast.php?cast=' . $name . '">' . $name . '</a> ';
+         $str_direct .= '<a href="list_by.php?type=DIRECT&key=' . $name . '">' . $name . '</a> ';
          $str_direct .= ' (' . $value . ') ';
          $str_direct .= '</li>';
       }
@@ -63,7 +63,7 @@ if($sth->execute())
 
          $str_player .= '<li>';
          // $str_player .= $name;
-         $str_player .= '<a href="list_by_cast.php?cast=' . $name . '">' . $name . '</a> ';
+         $str_player .= '<a href="list_by.php?type=PLAYER&key=' . $name . '">' . $name . '</a> ';
          $str_player .= ' (' . $value . ') ';
          $str_player .= '</li>';
       }

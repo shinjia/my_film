@@ -58,6 +58,8 @@ div#footer {
       | <a href="index.php" target="_top">首頁</a>
       | <a href="page.php?code=note2">說明</a> 
       | <a href="list_page.php">資料列表</a> 
+      | <a href="all_cast.php">所有人員</a> 
+      | <a href="all_note.php">所有標籤</a> 
       |
    </div>
   

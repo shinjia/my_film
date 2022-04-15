@@ -9,16 +9,16 @@
 <body>
 <h1>我看過的電影</h1>
 <p><a href="list_all.php">list_all.php 列出資料 (全部)</a></p>
-<p><a href="list_page.php">list_page.php 列出資料 (分頁)</a></p>
-<p><a href="all_cast.php">all_cast.php 列出所有的人員</a></p>
-<p><a href="all_note.php">all_cast.php 列出所有的標籤</a></p>
+<p><a href="list_page.php">list_page.php 列出資料 (分頁)---可用在前台網頁</a></p>
+<p><a href="all_cast.php">all_cast.php 列出所有的人員</a>---可用在前台網頁</p>
+<p><a href="all_note.php">all_cast.php 列出所有的標籤</a>---可用在前台網頁</p>
 
 <h2>以下必須指定傳入參數</h2>
 <p><a href="list_by_cast.php">list_by_cast.php 列出某人員的資料 (傳入參數 cast)</a></p>
 <p><a href="list_by_note.php">list_by_cast.php 列出某標籤的資料 (傳入參數 note)</a></p>
 
 <h2>將多支類似程式合併一起</h2>
-<p><a href="list_by.php">list_by.php 列出某某某資料</a> (傳入 type 及 key)---可用在台網頁</p>
+<p><a href="list_by.php">list_by.php 列出某某某資料</a> (傳入 type 及 key)---可用在前台網頁</p>
 <ul>
     <li><a href="list_by.php?type=YEAR&key=2022">YEAR 列出某年度</a></li>
     <li><a href="list_by.php?type=AREA&key=台">AREA 列出某國家</a></li>
