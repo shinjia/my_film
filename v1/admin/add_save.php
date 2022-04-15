@@ -21,7 +21,7 @@ $remark   = isset($_POST['remark'])   ? $_POST['remark']   : '';
 $pdo = db_open();
 
 // 寫出 SQL 語法
-$sqlstr = "INSERT INTO film(filmyear, pub_date, title_c, title_e, area, rate, key_wiki, key_imdb, key_dban, key_note, x1, x2, x3, x4, x5, tag_cast, tag_note) VALUES (:filmyear, :pub_date, :title_c, :title_e, :country, :rate, :key_wiki, :key_imdb, :key_dban, :key_note, :tag_cast, :tag_note, :remark)";
+$sqlstr = "INSERT INTO film(filmyear, pub_date, title_c, title_e, area, rate, key_wiki, key_imdb, key_dban, key_note, x1, x2, x3, x4, x5, tag_cast, tag_note) VALUES (:filmyear, :pub_date, :title_c, :title_e, :area, :rate, :key_wiki, :key_imdb, :key_dban, :key_note, :tag_cast, :tag_note, :remark)";
 
 $sth = $pdo->prepare($sqlstr);
 $sth->bindParam(':filmyear', $filmyear, PDO::PARAM_STR);
