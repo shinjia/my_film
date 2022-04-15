@@ -4,17 +4,17 @@
 SELECT * FROM film ORDER BY pub_date DESC
 
 
-SELECT filmyear, title_c, country FROM film ORDER BY pub_date DESC
+SELECT filmyear, title_c, area FROM film ORDER BY pub_date DESC
 
 
 CREATE VIEW film_vw1 AS
-  SELECT filmyear, title_c, country FROM film ORDER BY pub_date DESC
+  SELECT filmyear, title_c, area FROM film ORDER BY pub_date DESC
 
 CREATE VIEW film_vw2 AS
-  SELECT filmyear, title_c, title_e, country, rate FROM film ORDER BY pub_date DESC
+  SELECT filmyear, title_c, title_e, area, rate FROM film ORDER BY pub_date DESC
 
 CREATE VIEW film_vw3 AS
-  SELECT filmyear, title_c, title_e, country, rate, tag_cast, tag_note FROM film ORDER BY pub_date DESC
+  SELECT filmyear, title_c, title_e, area, rate, tag_cast, tag_note FROM film ORDER BY pub_date DESC
 
 SELECT * FROM film_vw1
 SELECT * FROM film_vw2
@@ -25,7 +25,7 @@ SELECT * FROM film_vw3
 
 列出某年度的電影 (WHERE filmyear=2022)
 列出某評分的電影 (WHERE rate=10)
-列出台灣的的電影 (WHERE country='台')
+列出台灣的的電影 (WHERE area='台')
 
 列出某某人演過的電影
 SELECT * FROM film_vw3 WHERE tag_cast LIKE '%李安%'
@@ -57,7 +57,7 @@ list_by_rate.php 評分 (1~10)
   - 迪士尼
   - 索尼動畫
   - 藍天工作室
-
+list_by.php
 
 
 *****統計類型******
@@ -66,7 +66,7 @@ list_by_rate.php 評分 (1~10)
 SELECT filmyear, count(*) FROM film GROUP BY filmyear DESC
 
 列出各國的數量
-SELECT country, count(*) AS tot FROM film GROUP BY country ORDER BY tot DESC
+SELECT area, count(*) AS tot FROM film GROUP BY area ORDER BY tot DESC
 
 列出各種評分的數量
 SELECT rate, count(*) AS tot FROM film GROUP BY rate ORDER BY rate DESC
