@@ -62,8 +62,6 @@ switch($type)
 }
 
 
-echo $sql_where;
-
 // 連接資料庫
 $pdo = db_open(); 
 

@@ -60,6 +60,9 @@ div#footer {
       | <a href="list_page.php">資料列表</a> 
       | <a href="all_cast.php">所有人員</a> 
       | <a href="all_note.php">所有標籤</a> 
+      | <a href="all_stat.php?type=STAT1">統計1</a> 
+      | <a href="all_stat.php?type=STAT2">統計2</a> 
+      | <a href="all_stat.php?type=STAT3">統計3</a> 
       |
    </div>
   
