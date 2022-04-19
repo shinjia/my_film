@@ -1,6 +1,22 @@
 <?php
+session_start();
+
 include '../common/config.php';
 include '../common/utility.php';
+include '../common/define.php';
+
+$ss_usertype = isset($_SESSION["usertype"]) ? $_SESSION["usertype"] : "";
+$ss_usercode = isset($_SESSION["usercode"]) ? $_SESSION["usercode"] : "";
+
+
+if($ss_usertype!=DEF_LOGIN_ADMIN)
+{
+   header("Location: error.php");
+   exit;
+}
+
+//*****以上是權限控管 *****
+
 
 // 接受外部表單傳入之變數
 $filmyear = isset($_POST['filmyear']) ? $_POST['filmyear'] : '';

@@ -1,4 +1,19 @@
 <?php
+session_start();
+
+$ss_usertype = isset($_SESSION["usertype"]) ? $_SESSION["usertype"] : "";
+$ss_usercode = isset($_SESSION["usercode"]) ? $_SESSION["usercode"] : "";
+
+
+if($ss_usertype!=DEF_LOGIN_ADMIN)
+{
+   header("Location: error.php");
+   exit;
+}
+
+//*****以上是權限控管 *****
+
+
 include '../common/utility.php';
 
 $code = isset($_GET['code']) ? $_GET['code'] : 'error';

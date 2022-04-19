@@ -1,6 +1,23 @@
 <?php
+session_start();
+
 include '../common/config.php';
 include '../common/utility.php';
+include '../common/define.php';
+
+$ss_usertype = isset($_SESSION["usertype"]) ? $_SESSION["usertype"] : "";
+$ss_usercode = isset($_SESSION["usercode"]) ? $_SESSION["usercode"] : "";
+
+
+if($ss_usertype!=DEF_LOGIN_ADMIN)
+{
+   header("Location: error.php");
+   exit;
+}
+
+//*****以上是權限控管 *****
+
+
 
 $uid = isset($_GET['uid']) ? $_GET['uid'] : 0;
 

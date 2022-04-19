@@ -5,7 +5,7 @@ include '../common/utility.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;   // 目前的頁碼
 
-$numpp = 15;  // 每頁的筆數
+$numpp = 10;  // 每頁的筆數
 
 // 連接資料庫
 $pdo = db_open(); 
@@ -202,7 +202,7 @@ function save_view(_uid, _title_c)
 </script>
 
 <script>
-var data_max = 5;
+var data_max = 6;
 var data = {items: []};
 retrieve_view();
 </script>
