@@ -1,0 +1,80 @@
+***** 列出電影清單 ***
+
+列出全部電影 (時間序)
+SELECT * FROM film ORDER BY pub_date DESC
+
+
+SELECT filmyear, title_c, area FROM film ORDER BY pub_date DESC
+
+
+CREATE VIEW film_vw1 AS
+  SELECT filmyear, title_c, area FROM film ORDER BY pub_date DESC
+
+CREATE VIEW film_vw2 AS
+  SELECT filmyear, title_c, title_e, area, rate FROM film ORDER BY pub_date DESC
+
+CREATE VIEW film_vw3 AS
+  SELECT filmyear, title_c, title_e, area, rate, tag_cast, tag_note FROM film ORDER BY pub_date DESC
+
+SELECT * FROM film_vw1
+SELECT * FROM film_vw2
+SELECT * FROM film_vw3
+
+
+*****以下包含參數*****
+
+列出某年度的電影 (WHERE filmyear=2022)
+列出某評分的電影 (WHERE rate=10)
+列出台灣的的電影 (WHERE area='台')
+
+列出某某人演過的電影
+SELECT * FROM film_vw3 WHERE tag_cast LIKE '%李安%'
+
+列出某兩人同時出現的電影
+SELECT * FROM film_vw3 WHERE tag_cast LIKE '%魏斯·安德森%' AND tag_cast LIKE '%歐文·威爾森%'
+
+列出某某主題相關的電影
+SELECT * FROM film_vw3 WHERE tag_note LIKE '%迪士尼%'
+
+
+*****列出清單 (必須用程式)*****
+列出有哪些人員 (導演、演員) all_cast.php
+列出有哪些主題 all_note.php
+
+衍生出各項查詢的程式
+list_by_cast.php 人員 (@@導演、@演員)
+list_by_note.php 標籤 (以 # 開頭)
+list_by_year.php 年度
+list_by_area.php 國家 
+list_by_rate.php 評分 (1~10)
+其他特定主題 (以tag_note 以!開頭)
+  - 奧斯卡最佳影片
+  - 奧斯卡最佳導演
+  - 007
+  - 漫威第X階段
+  - 名偵探柯南
+  - 皮克斯
+  - 迪士尼
+  - 索尼動畫
+  - 藍天工作室
+list_by.php
+
+
+*****統計類型******
+
+列出各年度的數量
+SELECT filmyear, count(*) FROM film GROUP BY filmyear DESC
+
+列出各國的數量
+SELECT area, count(*) AS tot FROM film GROUP BY area ORDER BY tot DESC
+
+列出各種評分的數量
+SELECT rate, count(*) AS tot FROM film GROUP BY rate ORDER BY rate DESC
+
+
+
+=====================================
+****補充****
+
+SHOW FULL TABLES IN class WHERE TABLE_TYPE LIKE 'VIEW'
+
