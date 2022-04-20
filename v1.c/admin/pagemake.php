@@ -10,38 +10,8 @@ function pagemake($content='', $head='')
 <title>基本資料庫系統</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style type="text/css">
-* {
-  margin: 0px;
-}
-
-div.container {
-  padding: 10px;
-  margin: 0 auto;
-  width: 760px;
-}
-
-div#header {
-  padding: 10px;
-  background-color: #AAEEAA; 
-}
-
-div#nav {
-  padding: 10px;
-  background-color: #FFAA33; 
-}
-
-
-div#main {
-  padding: 10px;
-  background-color: #33AAFF; 
-}
-
-div#footer {
-  padding: 10px;
-  background-color: #AAAA33; 
-  text-align: center;
-}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 
 </style>
 
@@ -49,27 +19,61 @@ div#footer {
 </head>
 <body>
 
-<div class="container">
-   <div id="header">
-      <h1>後台：我的電影</h1>
-   </div>
-  
-   <div id="nav">     
-      | <a href="index.php" target="_top">首頁</a>
-      | <a href="page.php?code=note2">說明</a> 
-      | <a href="list_page.php">資料列表</a> 
-      |
-   </div>
-  
-   <div id="main">
-    {$content}
-   </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">後台管理</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">後台首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="list_page.php">分頁列出</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-   <div id="footer">
-     <p>版權聲明</p>
-   </div>
+<div class="container">
+
+  <div id="main">
+    {$content}
+  </div>
 
 </div>
+
+
+<footer class="footer mt-auto py-3 bg-dark">
+    <div class="container">
+      <span class="text-muted">版權沒有，歡迎拷貝</span>
+    </div>
+</footer>
+
+
+<!-- Bundle: Popper.js + Bootstrap JS -->
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>  

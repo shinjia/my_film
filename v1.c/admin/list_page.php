@@ -57,18 +57,24 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
    $remark   = convert_to_html($row['remark']);
    
    $data .= <<< HEREDOC
-     <tr align="center">
-      <td>{$filmyear}</td>
+   <tr>
       <td>{$pub_date}</td>
-      <td>{$title_c}</td>
-      <td>{$title_e}</td>
+      <td><a href="display.php?uid={$uid}" 
+            class="btn btn-sm btn-secondary" 
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="{$title_e}">{$title_c}</a></td>
       <td>{$area}</td>
       <td>{$rate}</td>
       <td>{$remark}</td>
-       <td><a href="display.php?uid=$uid">詳細</a></td>
-       <td><a href="edit.php?uid=$uid">修改</a></td>
-       <td><a href="delete.php?uid=$uid" onClick="return confirm('確定要刪除嗎？');">刪除</a></td>
-    </tr>
+      <!--
+      <td><a href="display.php?uid=$uid" class="btn btn-sm btn-info">詳細</a></td>
+      -->
+      <td>
+         <a href="edit.php?uid=$uid" class="btn btn-sm btn-warning">修改</a>
+         <a href="delete.php?uid=$uid" class="btn btn-sm btn-danger" onClick="return confirm('確定要刪除嗎？');">刪除</a>
+      </td>
+   </tr>
 HEREDOC;
 }
 
@@ -131,16 +137,14 @@ HEREDOC;
 $html = <<< HEREDOC
 <h2 align="center">共有 $total_rec 筆記錄</h2>
 {$ihc_navigator}
-<table border="1" align="center">   
+<table class="table table-hover">
    <tr>
-      <th>年度</th>
       <th>首映日</th>
       <th>片名</th>
-      <th>英名片名</th>
       <th>國家</th>
       <th>評分</th>
       <th>備註</th>
-      <th colspan="3" align="center"><a href="add.php">新增記錄</a></th>
+      <th><a href="add.php" class="btn btn-sm btn-primary">新增記錄</a></th>
    </tr>
 {$data}
 </table>

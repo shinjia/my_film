@@ -52,7 +52,7 @@ if($sth->execute())
       $remark   = convert_to_html($row['remark']);
    
       $data = <<< HEREDOC
-       <table>
+      <table class="table">
          <tr><th>年度</th><td>{$filmyear}</td></tr>
          <tr><th>首映日</th><td>{$pub_date}</td></tr>
          <tr><th>片名</th><td>{$title_c}</td></tr>
@@ -66,7 +66,7 @@ if($sth->execute())
          <tr><th>tag_人員</th><td>{$tag_cast}</td></tr>
          <tr><th>tag_主題</th><td>{$tag_note}</td></tr>
          <tr><th>備註</th><td>{$remark}</td></tr>
-       </table>
+      </table>
 HEREDOC;
    }
    else
@@ -83,8 +83,7 @@ else
 
 
 $html = <<< HEREDOC
-<button onclick="location.href='list_page.php';">返回列表</button>
-<h2>顯示資料</h2>
+<button class="btn btn-primary" onclick="location.href='list_page.php';">返回列表</button>
 {$data}
 HEREDOC;
  
