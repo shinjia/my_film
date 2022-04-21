@@ -15,7 +15,7 @@
 
 <h2>以下必須指定傳入參數</h2>
 <p><a href="list_by_cast.php">list_by_cast.php 列出某人員的資料 (傳入參數 cast)</a></p>
-<p><a href="list_by_note.php">list_by_cast.php 列出某標籤的資料 (傳入參數 note)</a></p>
+<p><a href="list_by_note.php">list_by_note.php 列出某標籤的資料 (傳入參數 note)</a></p>
 
 <h2>將多支類似程式合併一起</h2>
 <p><a href="list_by.php">list_by.php 列出某某某資料</a> (傳入 type 及 key)---可用在前台網頁</p>
@@ -27,7 +27,7 @@
     <li><a href="list_by.php?type=PLAYER&key=王淨">PLAYER 列出某演員</a></li>
     <li><a href="list_by.php?type=SERIAL&key=蝙蝠俠">SERIAL 列出某系列</a></li>
     <li><a href="list_by.php?type=TOPIC&key=奧斯卡最佳影片">TOPIC 列出某主題</a></li>
-    <li><a href="list_by.php?type=NOTE&key=性別">NOTE 列出某標籤</a></li>
+    <li><a href="list_by.php?type=NOTE&key=時空穿越">NOTE 列出某標籤</a></li>
 </ul>
 
 </body>
