@@ -11,6 +11,16 @@ $poster = $ary['Poster'];
 $filename_poster = '../images_poster/' . $imdb . '.jpg';
 file_put_contents($filename_poster, file_get_contents($poster));
 
-echo '<p>檢視下方圖片，取得後已自動存檔。</p>';
-echo '<img src="' . $poster . '">';
+
+$refer = $_SERVER['HTTP_REFERER'];  // 呼叫此程式之前頁
+
+$html = <<< HEREDOC
+<p><a href="{$refer}" class="btn btn-info">Back</a></p>
+<p>檢視下方圖片，取得後已自動存檔。</p>
+<img src="{$poster}">
+<p></p>
+HEREDOC;
+
+include 'pagemake.php';
+pagemake($html);
 ?>

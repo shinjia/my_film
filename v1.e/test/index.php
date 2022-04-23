@@ -30,5 +30,12 @@
     <li><a href="list_by.php?type=NOTE&key=時空穿越">NOTE 列出某標籤</a></li>
 </ul>
 
+<hr/>
+
+<h2>工具程式</h2>
+<ul>
+    <li><a href="batch_get_omdb_poster.php">batch_get_omdb_poster.php 批次抓 OMDB 的圖並存檔</a></li>
+</ul>
+
 </body>
 </html>
