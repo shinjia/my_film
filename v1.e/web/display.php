@@ -152,7 +152,7 @@ if($sth->execute())
          <tr><th>key_Wiki</th><td>{$str_wiki}</td></tr>
          <tr><th>key_IMDb</th><td>{$str_imdb}</td></tr>
          <tr><th>key_豆瓣</th><td>{$str_dban}</td></tr>
-         <tr><th>key_筆記</th><td>{$key_note}</td></tr>
+         <tr><th>key_筆記</th><td>{$str_note}</td></tr>
          <tr><th>tag_人員</th><td>{$tag_cast}</td></tr>
          <tr><th>(*)導演：</th><td>{$str_direct}</td></tr>
          <tr><th>(*)演員：</th><td>{$str_player}</td></tr>
