@@ -55,6 +55,11 @@ body {
 }
 
 
+.extra {
+  padding: 10px;
+  background-color: #AACCFF; 
+}
+
 .footer {
 	color: #FFFFFF;
 	background-color: #333333;

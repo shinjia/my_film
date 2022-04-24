@@ -35,13 +35,19 @@ function pagemake($content='', $head='', $js_after='')
    <div class="main">
     {$content}
    </div>
-   
+  
+   <div class="extra">
+    <h2>最近瀏覽項目</h2>
+    <div id="recent_view"></div>
+   </div>
+
   <div class="footer">
     <p>版權聲明</p>
   </div>
 
 </div>
 
+<script type="text/javascript" charset="UTF-8" src="recent.js"></script>
 
 {$js_after}
 </body>

@@ -135,7 +135,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
       <div class="overlay-content">
          <h2>{$pub_date}</h2>
          <p></p>
-         <a class="hover" href="{$url_display}">查看內容</a>
+         <a class="hover" href="{$url_display}" onclick="save_view({$uid}, '{$title_c}');">查看內容</a>
          <p><hr/></p>
          <p>{$str_cast}</p>
          <p><hr/></p>
@@ -144,7 +144,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
    </div>
 </div>
 <div class="card-content">
-   <a href="{$url_display}">
+   <a href="{$url_display}" onclick="save_view({$uid}, '{$title_c}');">
       <h2>{$title_c}</h2>
       <p>{$title_e}</p>
       <p>{$filmyear}, {$area}, {$str_rate}</p>
