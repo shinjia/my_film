@@ -44,7 +44,7 @@ if($sth->execute())
       if(!file_exists($img))
       {
          // $str2 = '沒有圖檔';
-         $str2 = '<a href="get_omdb_poster.php?imdb=' . $key_imdb . '" target="_blank" class="btn btn-sm btn-danger">取得圖檔</a>';         
+         $str2 = '<a href="get_omdb_poster.php?imdb=' . $key_imdb . '" class="btn btn-sm btn-danger">取得圖檔</a>';         
       }
 
       if($str1!='' || $str2!='')
@@ -53,8 +53,7 @@ if($sth->execute())
        <tr>
           <td>{$pub_date}</td>
           <td>{$title_c}</td>
-          <td>{$str1}</td>
-          <td>{$str2}</td>
+          <td>{$str1} {$str2}</td>
        </tr>
 HEREDOC;
       }
@@ -65,9 +64,11 @@ HEREDOC;
     <p>資料庫內總筆數：{$total_rec}</p>
     <p>圖檔總數量：{$cnt_before}</p>
 
-    <table border="1">
+    <table class="table table-hover">
         {$data}
     </table>
+
+    <p></p>
 HEREDOC;
 }
 else

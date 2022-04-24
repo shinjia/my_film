@@ -53,6 +53,7 @@ if($sth->execute())
       // 加入相關的連結
       $url_filmyear = 'list_by.php?type=YEAR&key=' . $filmyear;
       $url_area = 'list_by.php?type=AREA&key=' . $area;
+      $url_rate = 'list_by.php?type=RATE&key=' . $rate;
       
       // ****** BEGIN: 處理 tag_cast ******
       $a_item = explode(' ', $tag_cast);
@@ -72,18 +73,18 @@ if($sth->execute())
       // 顯示部分
       $str_direct = '';
       $str_player = '';
-      foreach($ary as $key=>$value)
+      foreach($ary as $k=>$value)
       {
-         if(substr($key,0,2)=='@@')
+         if(substr($k,0,2)=='@@')
          {
-            $name = substr($key,2);
+            $name = substr($k,2);
 
             // $str_direct .= $name;
             $str_direct .= '<a href="list_by.php?type=DIRECT&key=' . $name . '">' . $name . '</a>&nbsp;&nbsp;&nbsp; ';
          }
          else
          {
-            $name = substr($key,1);
+            $name = substr($k,1);
 
             // $str_player .= $name;
             $str_player .= '<a href="list_by.php?type=PLAYER&key=' . $name . '">' . $name . '</a>&nbsp;&nbsp;&nbsp; ';
@@ -111,23 +112,23 @@ if($sth->execute())
       $str_note = '';
       $str_type1 = '';  // ## 開頭的系列
       $str_type2 = '';  // ! 開頭的特定主題
-      foreach($ary as $key=>$value)
+      foreach($ary as $k=>$value)
       {
-         if(substr($key, 0, 2)=='##')
+         if(substr($k, 0, 2)=='##')
          {
-            $name = substr($key,2);         
+            $name = substr($k,2);         
             // $str_type1 .= $name;
             $str_type1 .= '<a href="list_by.php?type=SERIAL&key=' . $name . '">' . $name . '</a> ';
          }
-         elseif(substr($key, 0, 1)=='#')
+         elseif(substr($k, 0, 1)=='#')
          {
-            $name = substr($key,1);
+            $name = substr($k,1);
             // $str_note .= $name;
             $str_note .= '<a href="list_by.php?type=NOTE&key=' . $name . '">' . $name . '</a> ';
          }
-         elseif(substr($key, 0, 1)=='!')
+         elseif(substr($k, 0, 1)=='!')
          {
-            $name = substr($key,1);
+            $name = substr($k,1);
             // $str_type2 .= $name;
             $str_type2 .= '<a href="list_by.php?type=TOPIC&key=' . $name . '">' . $name . '</a> ';
          }
@@ -147,7 +148,7 @@ if($sth->execute())
          <tr><th>片名</th><td>{$title_c}</td></tr>
          <tr><th>英名片名</th><td>{$title_e}</td></tr>
          <tr><th>國家</th><td><a href="{$url_area}">{$area}</a></td></tr>
-         <tr><th>評分</th><td>{$rate}</td></tr>
+         <tr><th>評分</th><td><a href="{$url_rate}">{$rate}</a></td></tr>
          <tr><th>Google</th><td>{$str_google}</td></tr>
          <tr><th>key_Wiki</th><td>{$str_wiki}</td></tr>
          <tr><th>key_IMDb</th><td>{$str_imdb}</td></tr>

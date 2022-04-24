@@ -42,9 +42,9 @@ if($sth->execute())
    echo '</pre>';
    */
 
-   $str_note = '';
-   $str_type1 = '';  // ## 開頭的系列
-   $str_type2 = '';  // ! 開頭的特定主題
+   $str_type1 = '';  // ## 開頭的系列 (SERIAL)
+   $str_type2 = '';  // # 開頭的系列 (NOTE)
+   $str_type3 = '';  // ! 開頭的特定主題 (TOPIC)
    foreach($ary as $key=>$value)
    {
       if(substr($key, 0, 2)=='##')
@@ -59,20 +59,20 @@ if($sth->execute())
       elseif(substr($key, 0, 1)=='#')
       {
          $name = substr($key,1);
-         $str_note .= '<li>';
+         $str_type2 .= '<li>';
          // $str_note .= $name;
-         $str_note .= '<a href="list_by.php?type=NOTE&key=' . $name . '">' . $name . '</a> ';
-         $str_note .= ' (' . $value . ') ';
-         $str_note .= '</li>';
+         $str_type2 .= '<a href="list_by.php?type=NOTE&key=' . $name . '">' . $name . '</a> ';
+         $str_type2 .= ' (' . $value . ') ';
+         $str_type2 .= '</li>';
       }
       elseif(substr($key, 0, 1)=='!')
       {
          $name = substr($key,1);
-         $str_type2 .= '<li>';
-         // $str_type2 .= $name;
-         $str_type2 .= '<a href="list_by.php?type=TOPIC&key=' . $name . '">' . $name . '</a> ';
-         $str_type2 .= ' (' . $value . ') ';
-         $str_type2 .= '</li>';
+         $str_type3 .= '<li>';
+         // $str_type3 .= $name;
+         $str_type3 .= '<a href="list_by.php?type=TOPIC&key=' . $name . '">' . $name . '</a> ';
+         $str_type3 .= ' (' . $value . ') ';
+         $str_type3 .= '</li>';
       }
    }
 
@@ -83,7 +83,7 @@ if($sth->execute())
          <td style="vertical-align:top; width:33%;">
             <h3>一般標籤</h3>
             <ul>
-            {$str_note}
+            {$str_type2}
             </ul>
          </td>
          <td style="vertical-align:top; width:33%;">
@@ -95,7 +95,7 @@ if($sth->execute())
          <td style="vertical-align:top; width:33%;">
             <h3>特定主題</h3>
             <ul>
-            {$str_type2}
+            {$str_type3}
             </ul>
          </td>
       </tr>

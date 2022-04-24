@@ -5,7 +5,7 @@ include '../common/utility.php';
 
 $page = isset($_GET['page']) ? $_GET['page'] : 1;   // 目前的頁碼
 
-$numpp = 10;  // 每頁的筆數
+$numpp = 12;  // 每頁的筆數
 
 // 連接資料庫
 $pdo = db_open(); 
@@ -16,6 +16,9 @@ $tmp_start = ($page-1) * $numpp;  // 擷取記錄之起始位置
 $sqlstr = "SELECT * FROM film ";
 $sqlstr .= " LIMIT " . $tmp_start . "," . $numpp;
 
+
+include 'process_data.php';  // 會得到 $data 內容
+/*
 // 執行SQL及處理結果
 $data = '';
 $sth = $pdo->query($sqlstr);
@@ -44,13 +47,6 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
    $str_dban = (empty($key_dban))?'':('<a href="https://movie.douban.com/subject/' . $key_dban . '/" target="_blank">豆瓣</a>');
    $str_note = (empty($key_note))?'':('<a href="https://hackmd.io/' . $key_note . '" target="_blank">HackMD</a>');
 
-   // 海報圖檔
-   $str_poster = '';
-   $filename_poster = '../images_poster/' . $key_imdb . '.jpg';
-   if(file_exists($filename_poster))
-   {
-      $str_poster = '<img src="' . $filename_poster . '" style="width:60px;">';
-   }
 
    $data .= <<< HEREDOC
      <tr>
@@ -62,8 +58,6 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
       <td>{$rate}</td>
       <td><a href="display_omdb.php?imdb={$key_imdb}">{$key_imdb}</a></td>
       <td><a href="display_omdb_js.php?uid={$uid}">{$key_imdb}</a></td>
-      <td>{$str_poster}</td>
-
       <!--
       <td>{$str_google}</td>
       <td>{$str_wiki}</td>
@@ -75,6 +69,8 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
     </tr>
 HEREDOC;
 }
+*/
+
 
 // ------ 分頁處理開始 -------------------------------------
 // 
@@ -145,7 +141,6 @@ $html = <<< HEREDOC
       <th>評分</th>
       <th>OMDB(法一)</th>
       <th>OMDB(法二)</th>
-      <th>海報</th>
       <!--
       <th>Google</th>
       <th>Wiki</th>

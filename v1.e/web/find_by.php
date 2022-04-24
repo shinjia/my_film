@@ -8,7 +8,7 @@ $type = 'FIND';
 $page = isset($_GET['page']) ? $_GET['page'] : 1;   // 目前的頁碼
 
 
-$numpp = 10;  // 每頁的筆數
+$numpp = 12;  // 每頁的筆數
 
 $title_type = '片名包含『' . $key . '』的電影';
 $sql_where = "WHERE title_c LIKE '%" . $key . "%' OR title_e LIKE '%" . $key . "%' " ;
