@@ -120,7 +120,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
       }
    }
 
-   $str_note = $str_type1 . $str_type2;  // str_type3 不顯示
+   $str_tagnote = $str_type1 . $str_type2;  // str_type3 不顯示
 
 
    // 處理單筆顯示的連結
@@ -139,7 +139,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
          <p><hr/></p>
          <p>{$str_cast}</p>
          <p><hr/></p>
-         <p>{$str_note}</p>
+         <p>{$str_tagnote}</p>
       </div>
    </div>
 </div>

@@ -109,9 +109,9 @@ if($sth->execute())
       }
 
       // 處理顯示的部分
-      $str_note = '';
-      $str_type1 = '';  // ## 開頭的系列
-      $str_type2 = '';  // ! 開頭的特定主題
+      $str_type1 = '';  // ## 開頭的系列 (SERIAL)
+      $str_type2 = '';  // # 開頭的系列 (NOTE)
+      $str_type3 = '';  // ! 開頭的特定主題 (TOPIC)
       foreach($ary as $k=>$value)
       {
          if(substr($k, 0, 2)=='##')
@@ -123,14 +123,14 @@ if($sth->execute())
          elseif(substr($k, 0, 1)=='#')
          {
             $name = substr($k,1);
-            // $str_note .= $name;
-            $str_note .= '<a href="list_by.php?type=NOTE&key=' . $name . '">' . $name . '</a> ';
+            // $str_type2 .= $name;
+            $str_type2 .= '<a href="list_by.php?type=NOTE&key=' . $name . '">' . $name . '</a> ';
          }
          elseif(substr($k, 0, 1)=='!')
          {
             $name = substr($k,1);
-            // $str_type2 .= $name;
-            $str_type2 .= '<a href="list_by.php?type=TOPIC&key=' . $name . '">' . $name . '</a> ';
+            // $str_type3 .= $name;
+            $str_type3 .= '<a href="list_by.php?type=TOPIC&key=' . $name . '">' . $name . '</a> ';
          }
       }
       // ****** END: 處理 tag_note ******
@@ -159,8 +159,8 @@ if($sth->execute())
          <tr><th>(*)演員：</th><td>{$str_player}</td></tr>
          <tr><th>tag_主題</th><td>{$tag_note}</td></tr>
          <tr><th>(*)SERIAL：</th><td>{$str_type1}</td></tr>
-         <tr><th>(*)TOPIC：</th><td>{$str_type2}</td></tr>
-         <tr><th>(*)NOTE：</th><td>{$str_note}</td></tr>
+         <tr><th>(*)NOTE：</th><td>{$str_type2}</td></tr>
+         <tr><th>(*)TOPIC：</th><td>{$str_type3}</td></tr>
          <tr><th>備註</th><td>{$remark}</td></tr>
        </table>
        
