@@ -50,12 +50,12 @@ body {
 
 .main {
   padding: 10px;
+  padding-bottom: 20px;
   background-color: #FFFFFF; 
 }
 
 
 .footer {
-  margin-top: 10px;
 	color: #FFFFFF;
 	background-color: #333333;
 	width:100%;
