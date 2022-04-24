@@ -5,11 +5,11 @@
 }
 
 body {
-  background: #EEEEEE;
+  background: #DDDDDD;
 }
 
 .container {
-  margin: 1em;
+  margin: 0 5%;
   text-align: center;
 }
 
@@ -48,9 +48,19 @@ body {
 }
 
 
-.container {
-  margin: 1em;
-  text-align: center;
+.main {
+  padding: 10px;
+  background-color: #FFFFFF; 
+}
+
+
+.footer {
+  margin-top: 10px;
+	color: #FFFFFF;
+	background-color: #333333;
+	width:100%;
+	height:60px;
+	line-height:60px;
 }
 
 
@@ -143,4 +153,9 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   color: rgba(32, 41, 28, 0.8);
+}
+
+
+li {
+  list-style-type: none; /* Remove bullets */
 }

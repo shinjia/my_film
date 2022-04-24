@@ -73,13 +73,13 @@ if($sth->execute())
    $html = <<< HEREDOC
    <table>
       <tr>
-         <td style="vertical-align:top;">
+         <td style="vertical-align:top; width: 50%;">
             <h3>導演</h3>
             <ul>
             {$str_direct}
             </ul>
          </td>
-         <td style="vertical-align:top;">
+         <td style="vertical-align:top; width: 50%;">
             <h3>演員</h3>
             <ul>
             {$str_player}
