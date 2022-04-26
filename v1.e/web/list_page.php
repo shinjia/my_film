@@ -18,8 +18,26 @@ $tmp_start = ($page-1) * $numpp;  // 擷取記錄之起始位置
 $sqlstr = "SELECT * FROM film ";
 $sqlstr .= " LIMIT " . $tmp_start . "," . $numpp;
 
+$showtype = isset($_COOKIE['showtype']) ? $_COOKIE['showtype'] : 1;
 
-include 'process_data.php';  // 會得到 $data 內容
+switch($showtype)
+{
+   case 1:
+      $file_st = 'process_data1.php';
+      break;
+   case 2:
+      $file_st = 'process_data2.php';
+      break;
+   default:
+      $file_st = 'process_data.php';
+}
+
+include $file_st;
+
+
+// include 'process_data.php';  // 會得到 $data 內容
+
+
 /*
 // 執行SQL及處理結果
 $data = '';
