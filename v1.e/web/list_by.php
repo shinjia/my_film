@@ -8,6 +8,8 @@ $key = isset($_GET['key']) ? $_GET['key'] : 'X*&^*';
 $page = isset($_GET['page']) ? $_GET['page'] : 1;   // 目前的頁碼
 
 $numpp = 12;  // 每頁的筆數
+$numpp = isset($_COOKIE['numpp']) ? $_COOKIE['numpp'] : $numpp;
+$numpp = isset($_GET['numpp']) ? $_GET['numpp'] : $numpp;
 
 /* 依據 type 會有不同結果的變數 */
 $title_type = '';  // 標題
@@ -117,7 +119,7 @@ $lnk_pagegoto .= '</form>';
 
 // 將各種超連結組合成HTML顯示畫面
 $ihc_navigator  = <<< HEREDOC
-<table border="0" align="center">
+<table border="0" style="margin-left: auto; margin-right: auto;">
  <tr>
   <td>頁數：{$page} / {$total_page} &nbsp;&nbsp;&nbsp;</td>
   <td>
@@ -132,6 +134,11 @@ $ihc_navigator  = <<< HEREDOC
 </table>
 HEREDOC;
 // ------ 分頁處理結束 -------------------------------------
+
+if($total_page==1)
+{
+   $ihc_navigator = '';
+}
 
 
 $html = <<< HEREDOC

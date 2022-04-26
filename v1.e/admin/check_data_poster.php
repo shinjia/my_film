@@ -40,8 +40,7 @@ if($sth->execute())
       {
          $str1 = '沒有 IMDb 值';
       }
-
-      if(!file_exists($img))
+      else if(!file_exists($img))
       {
          // $str2 = '沒有圖檔';
          $str2 = '<a href="get_omdb_poster.php?imdb=' . $key_imdb . '" class="btn btn-sm btn-danger">取得圖檔</a>';         
