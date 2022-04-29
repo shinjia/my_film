@@ -32,40 +32,34 @@ function save_view(_uid, _title_c)
 
    // 先檢查是否已存在
    var found = false;
-   var found_id = 0;
+   var idx_found = 0;
 	for(idx in data.items)
 	{
 		item_one = data.items[idx];
       if(item_one.uid==_uid)
       {
          found = true;
-         found_id = idx;
+         idx_found = idx;
       }
    }
 
    if(found)
    {
-      // 移到最後面
-      let idx1 = found_id;
-      let idx2 = data.items.length - 1;
-      let element = data.items[idx1];
-      data.items.splice(idx1, 1);
-      data.items.splice(idx2, 0, element);
+      data.items.splice(idx_found, 1);
    }
-   else
+
+   // 超過數量則移除一項
+   if(data.items.length>=data_max)
    {
-      // 超過數量則移除一項
-      if(data.items.length>=data_max)
-      {
-         data.items.shift();
-      }
-
-      // Put the object into storage
-      data.items.push(dataObject);
-
-      var str1 = JSON.stringify(data);
-      localStorage.setItem('recent_view', str1);
+      data.items.shift();
    }
+
+   // Put the object into storage
+   data.items.push(dataObject);
+   
+   // save
+   localStorage.setItem('recent_view', JSON.stringify(data));
+
    show_all();
 }
 
