@@ -1,8 +1,8 @@
 <?php
 
 $html = <<< HEREDOC
-<h2 align="center">{$title_type}</h2>
-<p align="center">共有 $total_rec 筆記錄</p>
+<h2 align="center" style="background-color:#FFAAAA; color:FFFF00;">{$title_type}</h2>
+<h3 align="center">共有 $total_rec 筆記錄</h3>
 {$ihc_navigator}
 
 <div style="width:50%; margin:auto;">
