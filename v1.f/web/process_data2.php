@@ -65,7 +65,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
 
    $data .= <<< HEREDOC
    
-<div style="display:inline-block; margin:5px; 10px;">
+<div style="display:inline-block; border: 1px solid gray; padding: 0px 0px 10px 0px; margin:5px; 10px; border-radius:4px; overflow:hidden;">
 <a href="{$url_display}" onclick="save_view({$uid}, '{$title_c}');">
   <img src="{$str_poster}" style="width:150px; height:200px;";>
   </a>

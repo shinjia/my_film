@@ -1,6 +1,8 @@
 <?php
 include '../common/define.php';
 
+$refer = $_SERVER['HTTP_REFERER'];  // 呼叫此程式之前頁
+
 $cc_numpp = isset($_COOKIE['cc_numpp']) ? $_COOKIE['cc_numpp'] : DEF_CC_NUMPP;
 $cc_order = isset($_COOKIE['cc_order']) ? $_COOKIE['cc_order'] : DEF_CC_ORDER;
 $cc_style = isset($_COOKIE['cc_style']) ? $_COOKIE['cc_style'] : DEF_CC_STYLE;
@@ -111,7 +113,9 @@ $html = <<< HEREDOC
 
 </div>
 
+<input type="hidden" name="refer" value="{$refer}">
 </form>
+
 HEREDOC;
 
 include 'pagemake.php';

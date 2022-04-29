@@ -1,6 +1,8 @@
 <?php
 include '../common/define.php';
 
+$refer = isset($_POST['refer']) ? $_POST['refer'] : 'index.php';  // 呼叫 setup.php 程式之前頁
+
 $cc_numpp = isset($_POST['cc_numpp']) ? $_POST['cc_numpp'] : DEF_CC_NUMPP;
 $cc_order = isset($_POST['cc_order']) ? $_POST['cc_order'] : DEF_CC_ORDER;
 $cc_style = isset($_POST['cc_style']) ? $_POST['cc_style'] : DEF_CC_STYLE;
@@ -31,7 +33,19 @@ $html = <<< HEREDOC
 <p>排序：{$str_order}</p>
 <p>顯示風格：{$str_style}</p>
 <p>是否顯示最新瀏覽：{$str_watch}</p>
+
+<div style="line-hieght:20px;">&nbsp;</div>
+<hr />
+<div style="line-hieght:20px;">&nbsp;</div>
+
+<p>這頁面是教學考量暫時保留，供查看設定的結果</p>
+<p>
+可以在 PHP 內直接導向到之前進入設定的頁面<br/>
+<a href="{$refer}">{$refer}</a>
+</p>
 HEREDOC;
+
+header('location: ' . $refer);
 
 include 'pagemake.php';
 pagemake($html);

@@ -2,6 +2,8 @@
 include '../common/config.php';
 include '../common/utility.php';
 
+$refer = $_SERVER['HTTP_REFERER'];  // 呼叫此程式之前頁
+
 $uid = isset($_GET['uid']) ? $_GET['uid'] : 0;
 
 // 連接資料庫
@@ -203,7 +205,7 @@ else
 
 
 $html = <<< HEREDOC
-<button onclick="location.href='list_page.php';">返回列表</button>
+<button onclick="location.href='{$refer}';">返回列表</button>
 <h2>顯示資料</h2>
 {$data}
 HEREDOC;

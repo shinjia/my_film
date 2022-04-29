@@ -28,8 +28,7 @@ function pagemake($content='', $head='', $js_after='', $div_watch='')
       <a href="list_page.php">資料列表</a> 
       <a href="all_cast.php">所有人員</a> 
       <a href="all_note.php">所有標籤</a> 
-      <a href="find.php">查詢</a> 
-      <a href="stat.php">統計</a> 
+      <a href="find.php">查詢統計</a> 
       <a href="setup.php">設定</a>
    </div>
   

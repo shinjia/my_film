@@ -49,6 +49,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
      <tr>
       <td nowrap>{$pub_date}</td>
       <td nowrap><a href="display.php?uid={$uid}" onclick="save_view({$uid},'{$title_c}');">{$title_c}</a></td>
+      <td nowrap><button onclick="save_view({$uid},'{$title_c}');">{$title_c}</button></td>
       <td>{$title_e}</td>
       <td>{$area}</td>
       <td>{$rate}</td>

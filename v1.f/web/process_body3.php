@@ -10,6 +10,7 @@ $html = <<< HEREDOC
    <tr>
       <th>首映日</th>
       <th>片名</th>
+      <th>測試用</th>
       <th>英名片名</th>
       <th>國家</th>
       <th>評分</th>

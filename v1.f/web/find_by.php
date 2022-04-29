@@ -78,6 +78,26 @@ switch($cc_style)
 include $file_body;
 
 
+// 處理要不要顯示最近瀏覽的項目
+$div_watch = <<< HEREDOC
+<div class="extra">
+ <h2>最近瀏覽項目</h2>
+ <div id="recent_view"></div>
+</div>
+HEREDOC;
+
+if($cc_watch=='Y')
+{
+   // 需要互動的 Javascript
+   $js_after = '<script src="recent.js"></script>';
+}
+else
+{
+   $js_after = '';
+   $div_watch = '';
+}
+
+
 include 'pagemake.php';
-pagemake($html, '');
+pagemake($html, '', $js_after, $div_watch);
 ?>
