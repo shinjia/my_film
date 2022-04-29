@@ -29,6 +29,7 @@ function pagemake($content='', $head='', $js_after='', $div_watch='')
       <a href="all_cast.php">所有人員</a> 
       <a href="all_note.php">所有標籤</a> 
       <a href="find.php">查詢統計</a> 
+      <a href="storage.php">暫存區</a>
       <a href="setup.php">設定</a>
    </div>
   

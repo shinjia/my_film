@@ -66,6 +66,11 @@ switch($type)
       $sql_where = "WHERE remark LIKE '%" . $key . "%' ";
       break;
 
+   case 'STORAGE' :  // 暫存區
+      $title_type = '暫存區的電影';
+      $sql_where = "WHERE uid IN (" . $key . ") ";
+      break;
+   
    default:
       $title_type = '電影清單';
       $sql_where = "WHERE FALSE ";

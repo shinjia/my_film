@@ -61,6 +61,7 @@ while($row = $sth->fetch(PDO::FETCH_ASSOC))
       <td>{$remark}</td>
       <td><a href="display_omdb.php?imdb={$key_imdb}">{$key_imdb}</a></td>
       <td><a href="display_omdb_js.php?uid={$uid}">{$key_imdb}</a></td>
+      <td nowrap><button onclick="storage_add({$uid},'{$title_c}');">{$title_c}</button></td>
     </tr>
 HEREDOC;
 }

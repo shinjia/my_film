@@ -5,7 +5,7 @@ $html = <<< HEREDOC
 <h3 align="center">共有 $total_rec 筆記錄</h3>
 {$ihc_navigator}
 
-<div style="width:50%; margin:auto;">
+<div style="width:100%; margin:auto;">
 <table border="1" align="center">
    <tr>
       <th>首映日</th>
@@ -21,10 +21,13 @@ $html = <<< HEREDOC
       <th>筆記</th>
       <th>備註</th>
       <th colspan="2">OMDB API</th>
+      <th>加入暫存區</th>
    </tr>
 {$data}
 </table>
 </div>
+
+<script src="storage_core.js"></script>
 HEREDOC;
 
 
